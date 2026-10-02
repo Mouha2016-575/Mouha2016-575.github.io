@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lamine Mbengue · Portfolio Infrastructures &amp; Réseaux</title>
+<meta name="description" content="Portfolio de Lamine Mbengue, étudiant en Bachelor SIN à l'EPSI, option infrastructures et réseaux. Projets, TP et expérience.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖧</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#">Lamine Mbengue</a>
+    <nav aria-label="Navigation principale">
+      <a href="#projets">Projets</a>
+      <a href="#experience">Expérience</a>
+      <a href="#competences">Compétences</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <h1>Lamine Mbengue</h1>
+      <p class="hero-role">Étudiant en Bachelor 2 SIN à l'EPSI Paris-Courbevoie, option infrastructures et réseaux.</p>
+      <p class="hero-intro">J'installe, je configure et je sécurise des serveurs et des postes de travail, sous Windows comme sous Linux. Je cherche un stage de 6 à 8 semaines entre janvier et mars 2027, en systèmes, réseaux et bases de données.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="CV_Lamine_Mbengue_Stage_Infra.pdf" download>Télécharger mon CV</a>
+        <a class="btn btn-ghost" href="#contact">Me contacter</a>
+      </div>
+    </div>
+    <img class="hero-photo" src="images/photo.jpg" alt="Photo de Lamine Mbengue" width="220" height="300">
+  </div>
+
+  <div class="wrap">
+    <figure class="lab">
+      <figcaption>Mon lab de TP sous VMware Workstation</figcaption>
+      <svg viewBox="0 0 900 300" role="img" aria-labelledby="lab-title lab-desc">
+        <title id="lab-title">Schéma du lab</title>
+        <desc id="lab-desc">Un serveur Ubuntu à l'adresse 192.168.146.137 propose SSH, FTP et HTTP derrière le pare-feu UFW. Un client Windows 11 s'y connecte. À côté, un domaine Active Directory relie un Windows Server 2022, deux clients Windows 10 et une machine Debian.</desc>
+        <rect x="8" y="8" width="884" height="284" rx="14" class="lab-host"/>
+        <text x="28" y="38" class="lab-host-label">PC hôte · VMware Workstation Pro</text>
+
+        <g>
+          <rect x="40" y="70" width="200" height="190" rx="10" class="node"/>
+          <text x="58" y="100" class="node-title">Client Windows 11</text>
+          <text x="58" y="124" class="node-sub">VM + snapshot</text>
+          <text x="58" y="170" class="mono">ssh lamine@…</text>
+          <text x="58" y="194" class="mono">ftp 192.168…</text>
+          <text x="58" y="218" class="mono">http://192.168…</text>
+        </g>
+
+        <line x1="240" y1="165" x2="330" y2="165" class="link"/>
+        <circle cx="285" cy="165" r="5" class="pulse"/>
+
+        <g>
+          <rect x="330" y="70" width="230" height="190" rx="10" class="node node-main"/>
+          <text x="348" y="100" class="node-title light">Ubuntu Server</text>
+          <text x="348" y="124" class="mono light">192.168.146.137</text>
+          <rect x="348" y="136" width="194" height="26" rx="5" class="port"/>
+          <text x="358" y="154" class="mono port-text">22 · SSH (OpenSSH)</text>
+          <rect x="348" y="166" width="194" height="26" rx="5" class="port"/>
+          <text x="358" y="184" class="mono port-text">21 · FTP (vsftpd)</text>
+          <rect x="348" y="196" width="194" height="26" rx="5" class="port"/>
+          <text x="358" y="214" class="mono port-text">80 · HTTP (Apache2)</text>
+          <text x="348" y="246" class="node-sub light">Pare-feu UFW actif</text>
+        </g>
+
+        <g>
+          <rect x="600" y="70" width="260" height="190" rx="10" class="node"/>
+          <text x="618" y="100" class="node-title">Domaine Active Directory</text>
+          <text x="618" y="124" class="node-sub">Windows Server 2022</text>
+          <rect x="618" y="146" width="104" height="44" rx="6" class="mini"/>
+          <text x="630" y="173" class="mini-text">Windows 10</text>
+          <rect x="736" y="146" width="104" height="44" rx="6" class="mini"/>
+          <text x="748" y="173" class="mini-text">Windows 10</text>
+          <rect x="618" y="200" width="222" height="44" rx="6" class="mini"/>
+          <text x="630" y="227" class="mini-text">Debian (sans interface graphique)</text>
+        </g>
+      </svg>
+    </figure>
+  </div>
+</section>
+
+<section id="projets" class="section">
+  <div class="wrap">
+    <h2>Projets et travaux pratiques</h2>
+    <p class="section-lead">Les TP que j'ai réalisés en cours, du plus récent au plus ancien. Cliquez sur un projet pour voir le détail, et sur une capture pour l’agrandir.</p>
+
+    <article class="project project-open">
+      <details open>
+        <summary>
+          <span class="project-title">Services réseau sous Ubuntu Server</span>
+          <span class="project-date">2026</span>
+          <span class="project-desc">SSH, FTP et HTTP configurés sur un serveur Ubuntu, protégés par le pare-feu UFW, et testés depuis un client Windows 11.</span>
+        </summary>
+        <div class="project-body">
+          <h3>Ce que j'ai fait</h3>
+          <ol class="steps">
+            <li><strong>Mise à jour du serveur</strong> puis vérification de son adresse IP avec <code>ip a</code>.</li>
+            <li><strong>SSH :</strong> installation d'OpenSSH, démarrage automatique au boot, puis connexion à distance depuis le client Windows 11.</li>
+            <li><strong>FTP :</strong> installation de vsftpd et configuration sécurisée : pas de connexion anonyme, chaque utilisateur enfermé dans son dossier (<code>chroot_local_user=YES</code>).</li>
+            <li><strong>HTTP :</strong> installation d'Apache2 et publication d'une page web dans <code>/var/www/html/</code>.</li>
+            <li><strong>Contrôle :</strong> vérification des ports ouverts avec <code>ss -tulpn</code>.</li>
+            <li><strong>Pare-feu :</strong> activation d'UFW et ouverture des seuls ports nécessaires (22, 21 et 80).</li>
+          </ol>
+
+<pre class="terminal"><code><span class="prompt">lamine@ubuntuserver:~$</span> sudo apt install openssh-server vsftpd apache2
+<span class="prompt">lamine@ubuntuserver:~$</span> sudo systemctl enable ssh
+<span class="prompt">lamine@ubuntuserver:~$</span> sudo nano /etc/vsftpd.conf
+<span class="prompt">lamine@ubuntuserver:~$</span> sudo ufw allow ssh &amp;&amp; sudo ufw allow ftp &amp;&amp; sudo ufw allow http
+<span class="prompt">lamine@ubuntuserver:~$</span> sudo ufw enable</code></pre>
+
+          <h3>Captures</h3>
+          <div class="gallery">
+            <figure><a href="images/ssh-status.png" target="_blank" rel="noopener"><img src="images/ssh-status.png" alt="Service SSH actif sur Ubuntu Server" loading="lazy"></a><figcaption>Service SSH actif</figcaption></figure>
+            <figure><a href="images/ssh-client-win11.jpg" target="_blank" rel="noopener"><img src="images/ssh-client-win11.jpg" alt="Connexion SSH depuis le client Windows 11" loading="lazy"></a><figcaption>Connexion SSH depuis Windows 11</figcaption></figure>
+            <figure><a href="images/ftp-connexion.png" target="_blank" rel="noopener"><img src="images/ftp-connexion.png" alt="Connexion FTP réussie au serveur vsftpd" loading="lazy"></a><figcaption>Connexion FTP réussie</figcaption></figure>
+            <figure><a href="images/apache-test.jpg" target="_blank" rel="noopener"><img src="images/apache-test.jpg" alt="Page par défaut d'Apache2 affichée depuis le client" loading="lazy"></a><figcaption>Apache2 accessible depuis le client</figcaption></figure>
+            <figure><a href="images/ufw-status.png" target="_blank" rel="noopener"><img src="images/ufw-status.png" alt="Règles du pare-feu UFW" loading="lazy"></a><figcaption>Règles du pare-feu UFW</figcaption></figure>
+          </div>
+
+          <h3>Ce que j'en retiens</h3>
+          <p>La différence entre un protocole et le logiciel qui le fait tourner, l'importance de n'ouvrir que les ports utiles, et le choix du mode réseau des VM : en NAT, la VM n'est pas joignable depuis le réseau local ; en Bridge, elle s'y comporte comme une vraie machine.</p>
+          <p class="tools">Ubuntu Server · OpenSSH · vsftpd · Apache2 · UFW · VMware Workstation</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="project">
+      <details>
+        <summary>
+          <span class="project-title">Postes de travail Windows et Linux</span>
+          <span class="project-date">2026</span>
+          <span class="project-desc">Installation et configuration d'une machine virtuelle Windows 11 et de postes de travail sous Windows et Linux.</span>
+        </summary>
+        <div class="project-body">
+          <p>J'ai installé et configuré une VM Windows 11, puis créé un snapshot (point de sauvegarde) pour pouvoir revenir à un état propre en cas d'erreur. J'ai aussi installé et configuré des postes de travail sous Windows et sous Linux.</p>
+          <p class="tools">Windows 11 · Linux · VMware Workstation · snapshots</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="project">
+      <details>
+        <summary>
+          <span class="project-title">Base de données d'un site d'actualités</span>
+          <span class="project-date">2026</span>
+          <span class="project-desc">Conception de la base de données d'un site d'actualités avec la méthode Merise.</span>
+        </summary>
+        <div class="project-body">
+          <p>Rédaction du dictionnaire des données, puis construction du modèle conceptuel de données (MCD) sous Looping : utilisateurs, rôles, articles et catégories.</p>
+          <p class="tools">Merise · MCD · Looping · SQL</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="project">
+      <details>
+        <summary>
+          <span class="project-title">Domaine Active Directory</span>
+          <span class="project-date">2026</span>
+          <span class="project-desc">Mise en place d'un domaine Windows avec un serveur, deux clients Windows 10 et une machine Debian.</span>
+        </summary>
+        <div class="project-body">
+          <p>Installation de Windows Server 2022 dans VMware Workstation, création du domaine Active Directory, puis gestion des utilisateurs, des groupes et des droits d'accès.</p>
+          <p class="tools">Windows Server 2022 · Active Directory · Windows 10 · Debian</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="project">
+      <details>
+        <summary>
+          <span class="project-title">Infrastructure réseau virtualisée</span>
+          <span class="project-date">janvier 2026</span>
+          <span class="project-desc">Une infrastructure complète déployée sur un hyperviseur VMware ESXi.</span>
+        </summary>
+        <div class="project-body">
+          <p>Création de machines virtuelles, installation de serveurs web et mise en place de pare-feu pfSense et OPNsense pour filtrer le trafic.</p>
+          <p class="tools">VMware ESXi · pfSense · OPNsense · serveurs web</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="project">
+      <details>
+        <summary>
+          <span class="project-title">Objet connecté ESP32 et cloud</span>
+          <span class="project-date">décembre 2025</span>
+          <span class="project-desc">Un objet connecté qui envoie ses données vers le cloud.</span>
+        </summary>
+        <div class="project-body">
+          <p>Programmation d'une carte ESP32 en MicroPython, envoi des mesures vers le cloud et traitement des données avec Node-RED.</p>
+          <p class="tools">ESP32 · MicroPython · Node-RED · cloud</p>
+        </div>
+      </details>
+    </article>
+  </div>
+</section>
+
+<section id="experience" class="section section-tint">
+  <div class="wrap">
+    <h2>Expérience</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <h3>Stagiaire informatique, Welma Électronique</h3>
+        <span class="job-date">1er juin – 10 juillet 2026</span>
+      </div>
+      <p class="job-place">Dakar, Sénégal · 6 semaines</p>
+      <ul>
+        <li>Mise en ligne du site e-commerce <a href="https://welma-electronique.com" target="_blank" rel="noopener">welma-electronique.com</a> : hébergement, déploiement via cPanel, configuration DNS du nom de domaine.</li>
+        <li>Sécurisation en HTTPS (certificat SSL) et résolution d'incidents en production.</li>
+        <li>Conception et administration de la base de données MySQL (7 tables).</li>
+        <li>Formation de deux responsables commerciaux à l'interface d'administration.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <h3>Agent de service, DESPS pour Elior Group</h3>
+        <span class="job-date">depuis juillet 2026</span>
+      </div>
+      <p class="job-place">Boutiques Nespresso · CDD, job étudiant</p>
+      <ul>
+        <li>Manutention : réception et rangement de la marchandise, dans le respect des consignes de sécurité.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="competences" class="section">
+  <div class="wrap">
+    <h2>Compétences</h2>
+    <dl class="skills">
+      <div><dt>Systèmes</dt><dd>Windows Server 2022, Active Directory, Windows 10/11, Debian, Ubuntu Server</dd></div>
+      <div><dt>Services réseau</dt><dd>SSH, FTP (vsftpd), HTTP (Apache2), DNS</dd></div>
+      <div><dt>Réseaux</dt><dd>TCP/IP, adressage IP, routage, NAT et Bridge, petits réseaux</dd></div>
+      <div><dt>Sécurité</dt><dd>UFW, pfSense, OPNsense, droits d'accès, SSL/HTTPS</dd></div>
+      <div><dt>Virtualisation</dt><dd>VMware Workstation Pro, VMware ESXi, snapshots</dd></div>
+      <div><dt>Support</dt><dd>Installation de postes, gestion d'incidents, dépannage</dd></div>
+      <div><dt>Bases de données</dt><dd>SQL, MySQL, Merise, UML</dd></div>
+      <div><dt>Code et outils</dt><dd>Python, PHP, HTML/CSS, Git, cPanel</dd></div>
+    </dl>
+
+    <h2 class="h2-spaced">Formation</h2>
+    <div class="edu">
+      <div><strong>Bachelor Science Informatique et Numérique (SIN)</strong><span>EPSI Paris-Courbevoie, option infrastructures et réseaux · 2025 – 2028</span></div>
+      <div><strong>Baccalauréat général, série S2 (scientifique)</strong><span>Lycée COSMOBODIM, Sénégal · 2025</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p>Vous proposez un stage en systèmes, réseaux ou bases de données entre janvier et mars 2027 ? Écrivez-moi.</p>
+    <ul class="contact-list">
+      <li><a href="mailto:malamine0103@gmail.com">malamine0103@gmail.com</a></li>
+      <li><a href="tel:+33753240630">07 53 24 06 30</a></li>
+      <li><a href="https://www.linkedin.com/in/lamine-mbengue-57884b385" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://github.com/Mouha2016-575" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">Lamine Mbengue · Vitry-sur-Seine · 2026</div>
+</footer>
+
+</body>
+</html>
